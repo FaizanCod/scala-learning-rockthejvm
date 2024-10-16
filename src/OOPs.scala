@@ -11,4 +11,12 @@ object OOPs extends App {
   }
   val anAnimal = new Animal
   anAnimal.eat()
+
+  // inheritance
+  class Cat extends Animal
+  val aCat = new Cat
+  aCat.eat()
+
+
+
 }
