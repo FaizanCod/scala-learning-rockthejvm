@@ -17,6 +17,18 @@ object OOPs extends App {
   val aCat = new Cat
   aCat.eat()
 
+  // constructor definition (class definition with args)
+  class Dog(name: String) extends Animal
+  val aDog = new Dog("Bob")
+
+  // constructor arguments are NOT fields (internal data members)
+  // aDog.name -> gives an ERROR since it is not a property associated with Dog class
+  // the constructor is not visible outside the class definition
+  // to allow the constructor to be a field, use "val" keyword before the constructor argument
+  class Otter(val name: String) extends Animal
+  val anOtter = new Otter("Jane")
+  // accessible now
+  println(anOtter.name)
 
 
 }
