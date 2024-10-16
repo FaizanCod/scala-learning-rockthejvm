@@ -18,7 +18,9 @@ object OOPs extends App {
   aCat.eat()
 
   // constructor definition (class definition with args)
-  class Dog(name: String) extends Animal
+  class Dog(name: String) extends Animal {
+    override def eat(): Unit = println("I am a dog, eating")
+  }
   val aDog = new Dog("Bob")
 
   // constructor arguments are NOT fields (internal data members)
@@ -30,5 +32,11 @@ object OOPs extends App {
   // accessible now
   println(anOtter.name)
 
+  // subtype polymorphism (similar to run-time polymorphism in other languages, base class pointer pointing to derived class object)
+  val anotherAnimal: Animal = new Dog("Haiku")
+  // the eat() method here will be called from the most derived class ie, Dog here at runtime
+  // at compile time, the compiler will treat it as a call from Animal object
+  anotherAnimal.eat()
+  // we can override the methods from base class in derived class using the override keyword before the method definition
 
 }
