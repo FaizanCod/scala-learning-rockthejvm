@@ -12,4 +12,17 @@ object Test extends App {
   val aBool = false
 
   println(anInt)
+
+  // Datatypes: Int, FLoat, Double, Char, String, Boolean
+
+  // String datatype
+  val aString = "Hello"
+  // string concatenation
+  val bString = "Hello" + " " + "World"
+
+  println(bString + aString)
+
+  // supports interpolation with the "s" suffix and $ sign
+  val interpolatedString = s"The value of anInt is: $anInt"
+  println(interpolatedString)
 }
