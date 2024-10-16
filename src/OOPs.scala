@@ -39,4 +39,19 @@ object OOPs extends App {
   anotherAnimal.eat()
   // we can override the methods from base class in derived class using the override keyword before the method definition
 
+
+  // abstract class
+  abstract class WalkingAnimal {
+    val hasLegs = true
+    // this method has no definition, but only signature, therefore every class that inherits must override this method
+    def walk(): Unit
+  }
+
+  class Penguin extends WalkingAnimal {
+    override def walk(): Unit = println("Penguin is walking")
+  }
+
+  val penguin = new Penguin
+  if (penguin.hasLegs) penguin.walk()
+  else println("Penguin cannot walk")
 }
