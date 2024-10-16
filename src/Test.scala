@@ -77,4 +77,14 @@ object Test extends App {
     else x * fact(x-1)
   }
   println("Factorial of 5 is " + fact(5))
+
+  // Unit datatype: It has no meaningful value, similar to "void" in other languages
+  // println is itself a Unit function
+  def printFxn(): Unit = {
+    println("This function can be used to print anything.")
+  }
+  printFxn()
+
+  // internally Unit value is characterized by "()"
+  val unit = ()
 }
