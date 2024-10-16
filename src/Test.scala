@@ -32,4 +32,18 @@ object Test extends App {
 
   // Everything in Scala is a value (or everything is an expression that can be reduced to a value), and we don't think of instructional-based code, instead we think of values and other elements that compose values to form values
   // Scala is a functional programming language
+
+  // "if" expression
+  val ifExp =
+    if (anInt > 50) 100
+    else 50
+  println(ifExp)
+
+  // chained "if-else if" expression
+  val chainedIfExp =
+    if (anInt > 100) 150
+    else if (anInt > 50) 100
+    else 0
+  println(chainedIfExp)
+
 }
