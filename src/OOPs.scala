@@ -67,10 +67,22 @@ object OOPs extends App {
     def eat(animal: Animal): Unit
   }
 
+  trait Mammal {
+    val haveMammaryGlands: Boolean
+  }
+
   // extends keyword is only used to inherit traits
   class Lion extends Carnivore {
     override val haveIncisors: Boolean = true
-    override def eat(animal: Animal): Unit = println(s"Eating animal")
+    override def eat(animal: Animal): Unit = println("Eating animal")
   }
 
+  // Scala allows only a single-class inheritance but multiple trait inheritance ("mixin")
+  class Cheetah extends WalkingAnimal with Carnivore with Mammal {
+    // we can also override concrete fields or methods
+    override def walk(): Unit = true
+    override val haveIncisors: Boolean = true
+    override def eat(animal: Animal): Unit = println("Eating animal")
+    override val haveMammaryGlands: Boolean = true
+  }
 }
