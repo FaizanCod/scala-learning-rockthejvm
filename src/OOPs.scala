@@ -48,6 +48,10 @@ object OOPs extends App {
   }
 
   class Penguin extends WalkingAnimal {
+    // all fields and methods are public by default, but can be changed to private/protected
+    // private cannot be accessed outside the class and protected can only be accessed in same class or derived class
+    private val canFly = false
+    protected def fly(): Unit = println("Trying to fly")
     override def walk(): Unit = println("Penguin is walking")
   }
 
