@@ -58,4 +58,19 @@ object OOPs extends App {
   val penguin = new Penguin
   if (penguin.hasLegs) penguin.walk()
   else println("Penguin cannot walk")
+
+
+  // interfaces - pure abstract classes, use keyword "trait"
+  // sometimes Scala does allow concrete methods inside "trait" but it should only be used for pure abstract fields and methods
+  trait Carnivore {
+    val haveIncisors: Boolean
+    def eat(animal: Animal): Unit
+  }
+
+  // extends keyword is only used to inherit traits
+  class Lion extends Carnivore {
+    override val haveIncisors: Boolean = true
+    override def eat(animal: Animal): Unit = println(s"Eating animal")
+  }
+
 }
