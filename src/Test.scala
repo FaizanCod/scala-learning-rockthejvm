@@ -13,7 +13,7 @@ object Test extends App {
 
   println(anInt)
 
-  // Datatypes: Int, FLoat, Double, Char, String, Boolean
+  // Datatypes: Int, Float, Double, Char, String, Boolean
 
   // String datatype
   val aString = "Hello"
@@ -25,4 +25,11 @@ object Test extends App {
   // supports interpolation with the "s" suffix and $ sign
   val interpolatedString = s"The value of anInt is: $anInt"
   println(interpolatedString)
+
+  // Expressions: these are structures that can be reduced to a value
+  val anExpression = 2 + 3
+  println(anExpression)
+
+  // Everything in Scala is a value (or everything is an expression that can be reduced to a value), and we don't think of instructional-based code, instead we think of values and other elements that compose values to form values
+  // Scala is a functional programming language
 }
