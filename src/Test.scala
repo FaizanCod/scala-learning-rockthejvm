@@ -46,4 +46,14 @@ object Test extends App {
     else 0
   println(chainedIfExp)
 
+  // code-blocks, these also are a "value" essentially, delimited by {}
+  val aCodeBlock = {
+    // definitions
+    val temp = 56
+
+    // VALUE OF A CODE BLOCK IS THE VALUE OF THE LAST EXPRESSION OF THE CODE BLOCK
+    temp + 4
+  }
+  println(aCodeBlock)
+
 }
