@@ -56,4 +56,17 @@ object Test extends App {
   }
   println(aCodeBlock)
 
+
+  // functions: the def keyword is used along with the parameter list (comma-separated) with param-name: param-type (for example, x: Int) and what type of value it returns
+  // all params are "val"s
+  def myFunc(x: Int, y: String): String = y + " " + x
+  // RHS can be a single expression or a code-block
+  println(myFunc(78, "People"))
+
+  def anotherFunc(x: Int, y: Double): Double = {
+    val t = x * 2
+
+    y * t
+  }
+  println(anotherFunc(4, 2.1))
 }
