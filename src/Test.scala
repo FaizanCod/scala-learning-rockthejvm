@@ -69,4 +69,12 @@ object Test extends App {
     y * t
   }
   println(anotherFunc(4, 2.1))
+
+
+  // Scala doesnt use loops or iterations of any form, everything must be defined in functions or expressions, therefore RECURSION is used
+  def fact(x: Int): Long = {
+    if (x <= 1) 1
+    else x * fact(x-1)
+  }
+  println("Factorial of 5 is " + fact(5))
 }
