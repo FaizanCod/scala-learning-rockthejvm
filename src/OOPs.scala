@@ -120,4 +120,33 @@ object OOPs extends App {
   }
   dinosaur.eat(anAnimal);
   // typically what happens in the compiler is that the RHS is treated as a separate class like "Carnivore_anonymous_532-1" and dinosaur is an object of that class with the methods defined
+
+  // singleton objects
+  object MySingleton { // it is the only instance of MySingleton type
+    val myVal = 54;
+    def myMethod(): Unit = println(s"My value is $myVal")
+    // special method, can be in any class, any object
+    def apply(x: String): Unit = println(s"Apply method called with argument $x")
+  }
+
+  MySingleton.myMethod();
+  // calling apply method, two ways
+  MySingleton.apply("Hello there!")
+  // this method call is also bound to the apply method, allows the instances to be called like functions
+  // useful in functional programming
+  MySingleton("How are you?")
+
+  // if there is already a class/Trait by the name Animal, and we create a singleton by the same name
+  // then these class-object/Trait-object pair is called companions, and this singleton object is called a companion object
+  object Animal {
+    // companions can access each other's private fields/methods
+    // however the singleton Animal and instances of class Animal are different things
+   val canLiveForever = false
+  }
+  // NOTE: normally never use the singleton Animal as an instance while other Animal instances are present in the code
+  // normally use companion objects to access fields that DO NOT depend on the Animal instances
+  // similar to "static" field in other languages
+  val animalsCanLiveForever = Animal.canLiveForever
+
+
 }
