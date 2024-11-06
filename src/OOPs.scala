@@ -85,4 +85,30 @@ object OOPs extends App {
     override def eat(animal: Animal): Unit = println("Eating animal")
     override val haveMammaryGlands: Boolean = true
   }
+
+  // Method notations & naming
+  val aCheetah = new Cheetah();
+  // another notation for the statement "aCheetah.eat(anOtter);" is
+  aCheetah eat anOtter // infix notation (only for methods having one argument), of the form = "object method argument"
+  // by providing this notation, Scala is expressive and very similar to natural language
+
+  // method naming
+  trait Philosopher {
+    def ?!(thought: String): Unit
+    // ?! is a VALID method name
+    // ? is also used in method "aka" and ! is used when we want to communicate with actors async
+  }
+
+  class Human extends Philosopher {
+    // need to override "?!" method
+    override def ?!(thought: String): Unit = println(s"I was thinking...$thought")
+  }
+
+  val aHuman = new Human();
+  aHuman ?! "What if we live in a simulation?"
+  // operators in Scala are basically methods
+  val basicMath = 1 + 2
+  val anotherBasicMath = 1.+(2) // both are equivalent
+  println(basicMath == anotherBasicMath)
+
 }
