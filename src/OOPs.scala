@@ -111,4 +111,13 @@ object OOPs extends App {
   val anotherBasicMath = 1.+(2) // both are equivalent
   println(basicMath == anotherBasicMath)
 
+  // Anonymous classes
+  // for any Trait, they can't be instantiated by themselves (just like abstract classes in other languages) they must be used by a concrete class
+  // but by use of anonymous classes we can provide concrete implementations of Traits too, like this
+  val dinosaur = new Carnivore {
+    override val haveIncisors: Boolean = true
+    override def eat(animal: Animal): Unit = println("I can eat everything!")
+  }
+  dinosaur.eat(anAnimal);
+  // typically what happens in the compiler is that the RHS is treated as a separate class like "Carnivore_anonymous_532-1" and dinosaur is an object of that class with the methods defined
 }
