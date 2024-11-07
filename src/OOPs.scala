@@ -169,4 +169,20 @@ object OOPs extends App {
    } finally {
      // executed no matter what, closing connections and releasing resources
    }
+
+  // generics, T is a generic data type
+  abstract class MyList[T] {
+    def head: T
+    def tail: MyList[T]
+  }
+
+  // normal generic list in Scala, made concrete by Int
+  val aList: List[Int] = List(1, 2, 3)
+  val first = aList.head  // int
+  val last = aList.tail
+  println(s"$first & $last")
+
+  val aStringList: List[String] = List("Hello", "Scala")
+  val firstString = aStringList.head // string, same method as line 181 is reusable code for string datatype => generic
+
 }
