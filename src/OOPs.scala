@@ -148,5 +148,13 @@ object OOPs extends App {
   // similar to "static" field in other languages
   val animalsCanLiveForever = Animal.canLiveForever
 
+  // case classes - lightweight data structures with boilerplate
+  // compiler auto-generates sensible equals and hashcode for the case class for inclusion into various collections that use equality and hashcode
+  // also serialization to send data over the wire in distributed applications
+  // also a companion object with apply (can instantiate classes without new keyword)
+  // also helps in pattern matching
+  case class Person(name: String, age: Int)
+
+  val bob = Person("Bob", 54) // can omit the new keyword because companion object with apply is present for a case class
 
 }
