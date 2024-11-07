@@ -157,4 +157,16 @@ object OOPs extends App {
 
   val bob = Person("Bob", 54) // can omit the new keyword because companion object with apply is present for a case class
 
+  // exceptions - special objects treated by the JVM that disrupts the normal flow of the program
+  // Scala is based on the JVM and gets compiled to a JVM bytecode
+   try {
+     // code that throws exception
+     val x: String = null
+     // accessing null string object's length
+     println(x.length)
+   } catch {
+     case e: Exception => println(s"Exception caught! $e")
+   } finally {
+     // executed no matter what, closing connections and releasing resources
+   }
 }
