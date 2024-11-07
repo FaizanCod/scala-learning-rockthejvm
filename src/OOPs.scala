@@ -185,4 +185,12 @@ object OOPs extends App {
   val aStringList: List[String] = List("Hello", "Scala")
   val firstString = aStringList.head // string, same method as line 181 is reusable code for string datatype => generic
 
+  // SOME IMPORTANT POINTS
+  // 1. In Scala, we operate with IMMUTABLE values/objects, ie, any modification to the object should be treated as an entirely new object
+  // BENEFITS: Works miraculously in multithreaded/distributed environments, helps in making sense of the code("reasoning about")
+  val reversedList = aList.reverse // reversedList is an entirely new object created
+  println(reversedList)
+
+  // 2. Scala is closest to the OO ideal (and a mix of functional programming)
+  // like when you extend App there is already a main method defined in the App trait, which works like a static method and so this object is runnable with the main method
 }
